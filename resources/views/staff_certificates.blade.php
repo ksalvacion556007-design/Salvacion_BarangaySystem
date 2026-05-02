@@ -484,6 +484,15 @@
             <a href="/staff/archive" class="nav-item">Archive</a>
         </nav>
         <div class="sidebar-foot">
+            <div style="font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 8px; line-height: 1.4;">
+                <div style="font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.22); margin-bottom: 3px;"></div>
+                <div style="font-weight: 500; color: rgba(255,255,255,0.7);">
+                    {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}
+                </div>
+                <div style="font-size: 10.5px; color: rgba(255,255,255,0.35); text-transform: capitalize;">
+                    {{ auth()->user()->role }}
+                </div>
+            </div>
             <button class="nav-logout" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</button>
         </div>
     </div>
