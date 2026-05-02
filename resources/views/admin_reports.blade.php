@@ -606,8 +606,10 @@
                             <td style="text-align:center; padding:6px 10px; border:1px solid #000;">{{ $secretaryCount }}</td>
                         </tr>
                         <tr>
-                            <td style="padding:6px 10px; border:1px solid #000;">Total Activity Logs</td>
-                            <td style="text-align:center; padding:6px 10px; border:1px solid #000;">{{ $logs->count() }}</td>
+                            <td style="padding:6px 10px; border:1px solid #000;">
+                                Activity Logs {{ (request('from') || request('to')) ? '(Filtered Period)' : '(All Time)' }}
+                            </td>
+                            <td style="text-align:center; padding:6px 10px; border:1px solid #000;">{{ $logCount }}</td>
                         </tr>
                     </table>
                 </div>

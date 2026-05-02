@@ -24,12 +24,12 @@ class AdminReportController extends Controller
 
         $logs = $query->get();
 
-        $staffQuery = User::whereIn('role', ['clerk', 'secretary']);
-
-        $total          = $staffQuery->count();
+        $total          = User::whereIn('role', ['clerk', 'secretary'])->count();
         $clerkCount     = User::where('role', 'clerk')->count();
         $secretaryCount = User::where('role', 'secretary')->count();
 
-        return view('admin_reports', compact('logs', 'total', 'clerkCount', 'secretaryCount'));
+        $logCount = $logs->count();
+
+        return view('admin_reports', compact('logs', 'total', 'clerkCount', 'secretaryCount', 'logCount'));
     }
 }
